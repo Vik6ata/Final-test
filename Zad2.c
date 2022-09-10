@@ -17,11 +17,21 @@ int main()
 unsigned sumArrayDigits( const int* arr,size_t n)
 {  
     int sum=0;
+    int value=0;
     for(int i=0;i<n;i++)
     {  
-    
-        sum+=arr[i]/10;
-        sum+=arr[i]%10;
+      if(arr[i]<0)
+      {
+       sum+=arr[i]
+       }
+       else{
+        value=arr[i];
+        while(value!=0)
+        {
+        sum+=value%10;
+        value/=10;;
+        }
+        }
      }
      printf("The sum of digits is:%d\n",sum);
 }
